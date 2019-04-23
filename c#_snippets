@@ -4,4 +4,9 @@ Invoke(new Action(() =>
 }
 ));
 
+Invoke((MethodInvoker)delegate
+{
+  //code...
+});   
+
 Task.Factory.StartNew(() => AlgoTrade.Trade());
