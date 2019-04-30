@@ -1,12 +1,20 @@
+//многопоточность
 Invoke(new Action(() =>
 { 
   //code...
 }
 ));
-
+//многопоточность
 Invoke((MethodInvoker)delegate
 {
   //code...
 });   
 
+//новая задача
 Task.Factory.StartNew(() => AlgoTrade.Trade());
+
+//проверка значений на дефолтность
+bool isDefault<T>(T o)
+{
+  return (o == null) ? (default(T) == null) : o.Equals(default(T));
+}
