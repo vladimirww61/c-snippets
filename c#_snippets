@@ -18,3 +18,15 @@ bool isDefault<T>(T o)
 {
   return (o == null) ? (default(T) == null) : o.Equals(default(T));
 }
+
+//NEWTON JSON
+/если распарчиваемом объекте есть null значения
+var x = JsonConvert.DeserializeObject<PositionsStruct>(s,new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore});
+
+/если перечисление парсится не значением а индексом
+[JsonConverter(typeof(StringEnumConverter))]
+public enum WSRequestResult
+{
+    sucess,
+    denied
+}
