@@ -30,3 +30,14 @@ public enum WSRequestResult
     sucess,
     denied
 }
+
+/позволяет распарсивать объект к свойству с другим имененм
+//public class RateLimit
+{
+    [JsonProperty("x-ratelimit-remaining")]
+    public int remaining { get; set; }
+    [JsonProperty("x-ratelimit-reset")]
+    public int reset { get; set; }
+    [JsonProperty("x-ratelimit-limit")]
+    public int limit { get; set; }
+}
