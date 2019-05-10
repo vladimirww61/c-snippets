@@ -41,3 +41,13 @@ public enum WSRequestResult
     [JsonProperty("x-ratelimit-limit")]
     public int limit { get; set; }
 }
+
+//исключения
+try
+{
+  //...code  
+}
+catch (Exception e)
+{
+    Console.WriteLine(e.Message);
+}
