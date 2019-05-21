@@ -51,3 +51,21 @@ catch (Exception e)
 {
     Console.WriteLine(e.Message);
 }
+
+//поиск в List<T>
+class Book 
+  { 
+  public int Price { get; set; } 
+  public string Name { get; set; } 
+  } 
+  static void Main(string[] args) 
+  { 
+  // заполняем книги 
+  List<Book> books = new List<Book>(); 
+  books.Add(new Book() { Price = 10, Name = "aaa" }); 
+  books.Add(new Book() { Price = 13, Name = "eee" }); 
+  books.Add(new Book() { Price = 5, Name = "ttt" }); 
+  books.Add(new Book() { Price = 45, Name = "ooo" });
+  // ищем 1 элемент 
+  Book found = books.Find(item => item.Price==13); 
+  } 
