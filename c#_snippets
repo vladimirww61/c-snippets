@@ -68,4 +68,6 @@ class Book
   books.Add(new Book() { Price = 45, Name = "ooo" });
   // ищем 1 элемент 
   Book found = books.Find(item => item.Price==13); 
-  } 
+  }
+  //отбирает и задает значение по все коллекции
+  foreach (Order g in orders.Where(x => x.Range == true)) g.Range = false;
