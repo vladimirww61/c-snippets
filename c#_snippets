@@ -42,6 +42,26 @@ public enum WSRequestResult
     public int limit { get; set; }
 }
 
+/кастомный конвертер
+public class PlainJsonStringConverter : JsonConverter
+{
+    public override bool CanConvert(Type objectType)
+    {
+        return objectType == typeof(string);
+    }
+    public override object ReadJson(JsonReader reader, Type objectType, object existingValue, JsonSerializer serializer)
+    {
+        return reader.Value;
+    }
+    public override void WriteJson(JsonWriter writer, object value, JsonSerializer serializer)
+    {
+        writer.WriteRawValue("\""+value+"\"");
+    }
+}
+    
+[JsonConverter(typeof(PlainJsonStringConverter))]
+public decimal? price { get; set; }
+        
 //исключения
 try
 {
