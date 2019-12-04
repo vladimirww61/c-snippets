@@ -5,3 +5,10 @@ let script = document.createElement('script');
         script.onload = function () {
             ///...        
         };
+
+//событие на сочетание клавиш
+document.addEventListener('keydown', function (event) {
+        if (event.code == 'KeyL' && (event.altKey)) {
+                curElement.value = "bush.tagan@gmail.com";
+            }
+});
